@@ -7,9 +7,6 @@ composer.lock
 .DS_Store
 Thumbs.db
 
-/*
+#Customization by @maomuriel
 
-	Customization by @maomuriel
-
-*/
 .phpintel/
