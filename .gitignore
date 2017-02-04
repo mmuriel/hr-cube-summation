@@ -6,3 +6,10 @@ composer.lock
 .env.php
 .DS_Store
 Thumbs.db
+
+/*
+
+	Customization by @maomuriel
+
+*/
+.phpintel/

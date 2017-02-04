@@ -14,5 +14,8 @@
         <testsuite name="Application Test Suite">
             <directory>./app/tests/</directory>
         </testsuite>
+        <testsuite name="HR Cube-summation Test Suite">
+            <directory>./app/lib/hr/cube-summation</directory>
+        </testsuite>
     </testsuites>
 </phpunit>
