@@ -10,3 +10,5 @@ Thumbs.db
 #Customization by @maomuriel
 
 .phpintel/
+php_errors.log
+app.log
