@@ -19,7 +19,7 @@ class Matrix3DRandomDataLoader {
 
 				for ($k=1;$k <= $this->dimZ;$k++){
 
-					$matrix->setBlock($i,$j,$k,rand(1,100));
+					$matrix->setBlock($i,$j,$k,rand(1,50));
 
 				}
 

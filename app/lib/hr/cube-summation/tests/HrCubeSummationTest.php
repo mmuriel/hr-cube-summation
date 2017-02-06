@@ -44,6 +44,27 @@ class HrCubeSummationTest extends TestCase {
 	}
 
 
+	public function testAddingByBlock (){
+
+		$matrix = new Hr\CubeSummation\Models\Matrix3D(3,3,3);
+		$matrixAdder = new Hr\CubeSummation\Classes\Matrix3DAdderByBlocks();
+		/* It populates Matrix */
+		for ($i=1;$i<=3;$i++){
+
+			for ($j=1;$j<=3;$j++){
+
+				$matrix->setBlock($i,$j,1,1);
+				$matrix->setBlock($i,$j,2,2);
+				$matrix->setBlock($i,$j,3,3);
+
+			}
+		}		
+		$sum = $matrixAdder->addingByBlocks($matrix,0,1,1,2,2,1);
+		$this->assertSame(12,$sum);
+ 		//print_r($matrix->getMatrix());
+	}
+
+
 
 
 
