@@ -35,6 +35,7 @@ $env = $app->detectEnvironment(function(){
   $isProduction  = preg_match("/var\/www\/hr-cube-summation\//", $haystack);
   
   // Set the environments
+  $environment = "/";
   if ($isLocal)       $environment = "local";
   if ($isDevelopment) $environment = "dev";
   if ($isTest)        $environment = "test";
