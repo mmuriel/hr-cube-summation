@@ -14,8 +14,8 @@ return array(
 	*/
 
 	'paths' => array(
-		__DIR__.'/../../views',
-		__DIR__.'/../../lib/hr/cube-summation/views'
+		__DIR__.'/../views',
+		__DIR__.'/../lib/hr/cube-summation/views'
 	),
 
 	/*
