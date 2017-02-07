@@ -19,7 +19,7 @@ class Matrix3DAdderByBlocks {
 
 				for ($k=$z1;$k<=$z2;$k++){
 
-					$sum = $sum + $matrix->getBlock(($i+1),($j+1),($k+1));				
+					$sum = $sum + $matrix->getBlock(($i),($j),($k));				
 
 				}
 

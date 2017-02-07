@@ -50,18 +50,58 @@ class HrCubeSummationTest extends TestCase {
 		$matrixAdder = new Hr\CubeSummation\Classes\Matrix3DAdderByBlocks();
 		/* It populates Matrix */
 		for ($i=1;$i<=3;$i++){
-
 			for ($j=1;$j<=3;$j++){
-
 				$matrix->setBlock($i,$j,1,1);
 				$matrix->setBlock($i,$j,2,2);
 				$matrix->setBlock($i,$j,3,3);
-
 			}
 		}		
-		$sum = $matrixAdder->addingByBlocks($matrix,0,1,1,2,2,1);
+		$sum = $matrixAdder->addingByBlocks($matrix,1,2,2,3,3,2);
 		$this->assertSame(12,$sum);
  		//print_r($matrix->getMatrix());
+	}
+
+
+
+	public function testTCaseOperation (){
+
+		$ops = array(
+			'UPDATE 2 2 2 4',
+			'QUERY 1 1 1 3 3 3',
+			'UPDATE 1 1 1 23',
+			'QUERY 2 2 2 4 4 4',
+			'QUERY 1 1 1 3 3 3'
+		);
+		$testCase = new Hr\CubeSummation\Models\TestCase(4,$ops);
+		/* It populates Matrix */
+		$res = $testCase->processTestCase();		
+		$this->assertSame([4,4,27],$res);
+ 		
+	}
+
+
+	public function testMatrix3dResquestHandlerBasicOperation (){
+
+		$instructions = array(
+			'2',
+			'4 5',
+			'UPDATE 2 2 2 4',
+			'QUERY 1 1 1 3 3 3',
+			'UPDATE 1 1 1 23',
+			'QUERY 2 2 2 4 4 4',
+			'QUERY 1 1 1 3 3 3',
+			'2 4',
+			'UPDATE 2 2 2 1',
+			'QUERY 1 1 1 1 1 1',
+			'QUERY 1 1 1 2 2 2',
+			'QUERY 2 2 2 2 2 2'
+		);
+		$resquestHandler = new Hr\CubeSummation\Classes\Matrix3DRequestHandler($instructions);
+		/* It populates Matrix */
+		$res = $resquestHandler->processInstruction();
+		$this->assertSame([4,4,27],$res[0]);
+		$this->assertSame([0,1,1],$res[1]);
+ 		
 	}
 
 

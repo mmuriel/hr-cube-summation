@@ -11,7 +11,19 @@
 |
 */
 
+/*
 Route::get('/', function()
 {
-	return View::make('hello');
+	return View::make('hr-index');
 });
+
+
+Route::post('/', function()
+{
+
+	return View::make('hr-index');
+});
+*/
+
+Route::get("/",array ('uses' => 'Matrix3DWebController@index'));
+Route::post("/",array ('uses' => 'Matrix3DWebController@process'));
